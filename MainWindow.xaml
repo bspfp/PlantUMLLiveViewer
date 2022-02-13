@@ -1,0 +1,63 @@
+﻿<Window x:Class="PlantUMLLiveViewer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PlantUMLLiveViewer"
+        mc:Ignorable="d"
+        Title="PlantUMLLiveViewer" Height="600" Width="800" Loaded="OnLoadedMainWindow" Icon="/res/app.ico">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ScrollViewer x:Name="cScrollViewer" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" SizeChanged="OnSizeChangedScrollViewer" Visibility="Collapsed" PreviewMouseLeftButtonDown="OnPreviewLBDownScrollViewer" PreviewMouseMove="OnPreviewMouseMoveScrollViewer" PreviewMouseLeftButtonUp="OnPreviewLBUpScrollViewer" PreviewMouseWheel="OnPreviewMouseWheelScrollViewer">
+            <Image x:Name="cLiveImage" />
+        </ScrollViewer>
+        <Image x:Name="cBackImage" Source="/res/appback.png" />
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Margin="8,0,8,0" Width="24" Background="{x:Null}" BorderBrush="{x:Null}" IsTabStop="False" Click="OnClickedSave">
+                <Image Source="/res/floppy-disk.png"/>
+            </Button>
+            <Button Grid.Column="1" Margin="0,0,8,0" Width="24" Background="{x:Null}" BorderBrush="{x:Null}" IsTabStop="False" Click="OnClickedOnOff">
+                <Image x:Name="cOnOffImage" Source="/res/on.png" />
+            </Button>
+            <Label x:Name="cMsg" Grid.Column="2" Margin="0,0,8,0" IsTabStop="False">시작</Label>
+            <Button Grid.Column="3" Margin="0,0,8,0" Width="24" Background="{x:Null}" BorderBrush="{x:Null}" Click="OnClickedFitWidth" IsTabStop="False">
+                <Image Source="/res/width.png" />
+            </Button>
+            <Button Grid.Column="4" Margin="0,0,8,0" Width="24" Background="{x:Null}" BorderBrush="{x:Null}" Click="OnClickedFitHeight" IsTabStop="False">
+                <Image Source="/res/height.png"/>
+            </Button>
+            <Button Grid.Column="5" Margin="0,0,8,0" Width="24" Background="{x:Null}" BorderBrush="{x:Null}" Click="OnClickedFitPage" IsTabStop="False">
+                <Image Source="/res/page.png"/>
+            </Button>
+            <Button Grid.Column="6" Margin="0,0,8,0" Width="24" Background="{x:Null}" BorderBrush="{x:Null}" Click="OnClickedResetZoom" IsTabStop="False">
+                <Image Source="/res/zoom.png"/>
+            </Button>
+            <ComboBox x:Name="cZoom" Grid.Column="7" Margin="0,0,8,0" Width="120" IsEditable="True" TextBoxBase.TextChanged="OnTextChangedZoom" IsTabStop="False">
+                <ComboBoxItem Content="25%"/>
+                <ComboBoxItem Content="50%"/>
+                <ComboBoxItem Content="100%"/>
+                <ComboBoxItem Content="150%"/>
+                <ComboBoxItem Content="200%"/>
+            </ComboBox>
+        </Grid>
+    </Grid>
+</Window>

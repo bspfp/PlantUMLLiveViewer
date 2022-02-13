@@ -1,0 +1,9 @@
+@startuml
+skinparam DefaultFontName D2Coding
+skinparam DefaultFontSize 18
+철수 -> 영희: Authentication Request
+영희 --> 철수: Authentication Response
+
+철수 -> 영희: Another authentication Request
+철수 <-- 영희: another authentication Response
+@enduml
