@@ -307,7 +307,7 @@ namespace PlantUMLLiveViewer {
         }
 
         private async Task<bool> GenerateLiveImage() {
-            var (success, _) = await RunPlanetUML($"-tpng -o \"{tmpFolder}\" {inputCharset} \"{sourcePath}\"");
+            var (success, _) = await RunPlanetUML($" \"{sourcePath}\" -tpng -o \"{tmpFolder}\" {inputCharset}");
             return success;
         }
 
