@@ -16,7 +16,7 @@ namespace PlantUMLLiveViewer {
         // 받은 PlantUML jar 파일 이름
         private const string PlantUMLFile = "plantuml.jar";
         // 다운 받을 PlantUML jar 파일 URL
-        private const string PlantUMLDownloadURL = "https://github.com/plantuml/plantuml/releases/download/v1.2023.12/plantuml-1.2023.12.jar";
+        private const string PlantUMLDownloadURL = "https://github.com/plantuml/plantuml/releases/download/v1.2023.13/plantuml-1.2023.13.jar";
         // .puml 파일 인코딩
         private const string inputCharset = "-charset utf8";
         // 저장 기능으로 사용할 출력 파일 형식
